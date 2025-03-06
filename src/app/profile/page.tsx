@@ -21,7 +21,7 @@ const Profile = () => {
 
   const logout = async () => {
     try {
-      await axios.get("/api/auth/logout");
+      await axios.get("/api/users/logout");
       toast.success(`User logged out`);
       router.push("/login");
 

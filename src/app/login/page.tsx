@@ -28,8 +28,12 @@ const Login = () => {
       const res = await axios.post(`/api/users/login`, user);
       console.log("Login success", res.data);
       toast.success("Login successful! Please verify your email.");
+      setLoading(false);
       router.push("/profile");
+    
     } catch (err: any) {
+      console.log(err, "something wrong")
+      setLoading(false);
       toast.error("Login failed: " + err.response?.data?.error);
     }
   };
